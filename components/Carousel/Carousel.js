@@ -14,8 +14,8 @@
 */
 
 !function(doc) {
-	let imageList = 'img';
-	(images = doc.querySelect(imageList)), (totalImages = image.length), (slide = 0), (moving = true);
+	let itemClassName = 'carousel__photo';
+	(items = doc.querySelect(itemClassName)), (totalItems = items.length), (slide = 0), (moving = true);
 
 	function setInitialClasses() {
 		items[totalImages - 1].classList.add('left-button');
@@ -23,6 +23,32 @@
 		items[1].classList.add('rigth-button');
 	}
 	function setEventListeners() {
-		let next = doc.get;
-	}
+		let next = doc.getElementsByClassName('carousel__button--next')[0],
+			prev = doc.getElementsByClassName('carousel__button--prev')[0];
+
+		next.addEventListener('click', moveNext);
+		prev.addEventListener('click', movePrev);
+    }
+    
+    function disableInteraction() {
+        moving = true;
+        setTimeout(function(){
+            moving = false}, 500);
+        }
+    funcion moveCarouselTo(slide) {
+        if(!moving) {
+            disableInteraction();
+            let newPrevious = slide -1,
+                newNext = slide + 1,
+                oldPrevious = slide - 2,
+                oldNext = slide +2;
+            
+            if(slide === 0){
+                newPrevious = (totalItems - 1)
+            }
+
+        
+        }
+    }
+    }
 };
