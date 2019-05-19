@@ -33,12 +33,16 @@ Edit this document to include your answers after each question. Make sure to lea
 1. What is the DOM?
 
 2. What is an event?
+An event is an activity like a click, scroll or load, usually caused by the user.
 
 3. What is an event listener?
+An event listener is a function that waits for an event (specified) to occur and then it does something.
 
 4. Why would we convert a NodeList into an Array?
+NodeList is an Array like structure but it's not an array so calling methods like .map won't work.
 
 5. What is a component?
+Component is a small, usually reusable piece of code.
 
 ### Git Set up
 
